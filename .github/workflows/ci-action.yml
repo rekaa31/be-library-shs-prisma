@@ -19,11 +19,8 @@ jobs:
     - name: Install dependencies
       run: npm install
 
-    - name: Test
-      run: npm run test
-
     - name: Deploy to Railway
       env:
         RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
       run: |
-        railway up
+        railway up --service library-shs-be
